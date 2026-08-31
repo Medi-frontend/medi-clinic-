@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Village 24 Clinic — Sandton &amp; Polokwane</title>
+<meta name="description" content="Health Village 24 Clinic: 24/7 emergency care across Sandton, Gauteng and Polokwane, Limpopo. Book appointments, manage patient records, and reach an on-duty doctor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-900:#0B4F4A; --teal-800:#0E5D57; --teal-700:#146B63; --teal-600:#1C8078;
+    --mint-100:#EAF4F1; --mint-050:#F4F9F7; --white:#FFFFFF; --ink:#12211E; --muted:#5C7A76; --line:#D8E6E2;
+    --coral:#FF6659; --coral-dark:#E14F42; --coral-100:#FFEDEA;
+    --gold:#D9A441; --gold-100:#FBF1DE;
+    --shadow-sm:0 2px 10px rgba(11,79,74,.07); --shadow-md:0 12px 32px rgba(11,79,74,.12);
+    --radius:16px; --display:'Fraunces',serif; --body:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;} }
+  body{font-family:var(--body); color:var(--ink); background:var(--white); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit; cursor:pointer;}
+  h1,h2,h3,h4{font-family:var(--display); font-weight:600; line-height:1.12; letter-spacing:-.01em;}
+  .container{max-width:1220px; margin:0 auto; padding:0 28px;}
+  .eyebrow{font-family:var(--mono); font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--teal-700); font-weight:600; display:flex; align-items:center; gap:8px; margin-bottom:14px;}
+  .eyebrow::before{content:""; width:18px; height:2px; background:var(--coral); display:inline-block; border-radius:2px;}
+  .skip-link{position:absolute; left:-9999px; top:0; background:var(--teal-900); color:#fff; padding:12px 18px; z-index:999; border-radius:0 0 8px 0;}
+  .skip-link:focus{left:0;}
+  :focus-visible{outline:3px solid var(--coral); outline-offset:2px;}
+
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 26px; border-radius:100px; font-weight:600; font-size:15px; border:1.5px solid transparent; transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease; white-space:nowrap;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--coral); color:#fff; box-shadow:var(--shadow-sm);}
+  .btn-primary:hover{background:var(--coral-dark); box-shadow:var(--shadow-md);}
+  .btn-ghost{background:transparent; border-color:rgba(255,255,255,.5); color:#fff;}
+  .btn-ghost:hover{background:rgba(255,255,255,.12); border-color:#fff;}
+  .btn-outline{background:transparent; border-color:var(--teal-700); color:var(--teal-800);}
+  .btn-outline:hover{background:var(--teal-900); color:#fff; border-color:var(--teal-900);}
+  .btn-dark{background:var(--teal-900); color:#fff;}
+  .btn-dark:hover{background:var(--teal-800);}
+  .btn-sm{padding:10px 18px; font-size:13.5px;}
+  .btn-block{width:100%;}
+  .btn:disabled{opacity:.55; cursor:not-allowed; transform:none;}
+
+  /* Topbar */
+  .topbar{background:var(--teal-900); color:#DCEEEA; font-size:13px;}
+  .topbar .container{display:flex; align-items:center; justify-content:space-between; padding-top:9px; padding-bottom:9px; flex-wrap:wrap; gap:6px;}
+  .topbar .left, .topbar .right{display:flex; align-items:center; gap:20px; flex-wrap:wrap;}
+  .topbar a{display:flex; align-items:center; gap:6px; opacity:.92;}
+  .topbar a:hover{opacity:1; text-decoration:underline;}
+  .topbar svg{width:14px; height:14px; flex-shrink:0;}
+  .topbar .right a.portal{background:rgba(255,255,255,.1); padding:5px 12px; border-radius:100px;}
+  @media (max-width:760px){ .topbar .left span.hide-mobile{display:none;} .topbar{font-size:12px;} }
+
+  /* Header */
+  header.site{position:sticky; top:0; z-index:100; background:rgba(255,255,255,.92); backdrop-filter:saturate(180%) blur(10px); border-bottom:1px solid var(--line);}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; padding:16px 0;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:var(--display); font-weight:700; font-size:20px; color:var(--teal-900);}
+  .logo .mark{width:38px; height:38px; border-radius:10px; background:var(--teal-900); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .logo .mark svg{width:20px; height:20px;}
+  .logo small{display:block; font-family:var(--body); font-weight:600; font-size:10.5px; letter-spacing:.1em; color:var(--coral); text-transform:uppercase;}
+  nav.main-links{display:flex; align-items:center; gap:28px;}
+  nav.main-links a{font-size:14.5px; font-weight:600; color:var(--ink); position:relative; padding:4px 0; margin-right:28px;}
+  nav.main-links a:last-child{margin-right:0;}
+  nav.main-links a::after{content:""; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:var(--coral); transition:width .2s ease;}
+  nav.main-links a:hover::after{width:100%;}
+  .nav-actions{display:flex; align-items:center; gap:12px;}
+  .hamburger{display:none; flex-direction:column; gap:5px; background:none; border:none; padding:6px;}
+  .hamburger span{width:24px; height:2.5px; background:var(--teal-900); border-radius:2px;}
+  @media (max-width:980px){
+    nav.main-links{position:fixed; inset:70px 0 0 0; background:#fff; flex-direction:column; align-items:flex-start; padding:28px; gap:22px; transform:translateX(100%); transition:transform .3s ease; overflow-y:auto; z-index:60;}
+    nav.main-links.open{transform:translateX(0);}
+    nav.main-links a{font-size:18px;}
+    .hamburger{display:flex;}
+    .nav-actions .btn-outline{display:none;}
+  }
+
+  /* Hero */
+  .hero{position:relative; overflow:hidden; background:linear-gradient(180deg, var(--mint-050) 0%, var(--white) 100%);}
+  .hero .container{display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; padding-top:72px; padding-bottom:60px;}
+  .hero h1{font-size:clamp(32px,4.2vw,52px); color:var(--teal-900); margin-bottom:18px;}
+  .hero h1 em{font-style:italic; color:var(--coral);}
+  .hero p.lead{font-size:17px; color:var(--muted); max-width:480px; margin-bottom:28px;}
+  .hero .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:36px;}
+  .hero .trust-row{display:flex; gap:30px; flex-wrap:wrap;}
+  .trust-item .num{font-family:var(--mono); font-weight:600; font-size:22px; color:var(--teal-900);}
+  .trust-item .label{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-top:2px;}
+  .branch-pills{display:flex; gap:10px; flex-wrap:wrap; margin-top:22px;}
+  .branch-pill{display:flex; align-items:center; gap:7px; background:#fff; border:1px solid var(--line); padding:7px 13px; border-radius:100px; font-size:12.5px; font-weight:600; color:var(--teal-800);}
+  .branch-pill svg{width:13px; height:13px; stroke:var(--coral);}
+
+  .monitor{background:var(--teal-900); border-radius:22px; padding:26px; color:#fff; box-shadow:var(--shadow-md); position:relative;}
+  .monitor-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;}
+  .monitor-head .status{display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12px; letter-spacing:.08em; color:#9FDDD3;}
+  .dot-live{width:8px; height:8px; border-radius:50%; background:#39E29D; animation:pulseDot 1.8s infinite;}
+  @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(57,226,157,.55);}70%{box-shadow:0 0 0 10px rgba(57,226,157,0);}100%{box-shadow:0 0 0 0 rgba(57,226,157,0);}}
+  .ecg-wrap{background:rgba(255,255,255,.05); border-radius:14px; padding:14px 8px; margin-bottom:16px; border:1px solid rgba(255,255,255,.08);}
+  .ecg-wrap svg{width:100%; height:66px; display:block;}
+  .ecg-line{fill:none; stroke:#39E29D; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:600; stroke-dashoffset:600; animation:draw 3.2s linear infinite;}
+  @keyframes draw{to{stroke-dashoffset:-600;}}
+  .vitals-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:16px;}
+  .vital{background:rgba(255,255,255,.06); border-radius:12px; padding:12px; text-align:left; border:1px solid rgba(255,255,255,.07);}
+  .vital .v-label{font-size:10px; color:#9FDDD3; text-transform:uppercase; letter-spacing:.08em; margin-bottom:4px;}
+  .vital .v-value{font-family:var(--mono); font-size:18px; font-weight:600;}
+  .vital .v-unit{font-size:10px; color:#9FDDD3; margin-left:2px;}
+  .duty-mini{background:rgba(255,255,255,.06); border-radius:12px; padding:12px 14px; border:1px solid rgba(255,255,255,.07); font-size:12.5px; display:flex; justify-content:space-between; align-items:center;}
+  .duty-mini b{font-family:var(--mono); color:#39E29D;}
+  @media (max-width:980px){ .hero .container{grid-template-columns:1fr;} .hero p.lead{max-width:none;} }
+
+  .pulse-divider{width:100%; height:34px; overflow:hidden; background:var(--white);}
+  .pulse-divider svg{width:100%; height:100%; display:block;}
+  .pulse-divider path{fill:none; stroke:var(--line); stroke-width:1.5;}
+  .pulse-divider path.spike{stroke:var(--coral); stroke-width:2;}
+
+  .emergency-strip{background:var(--coral); color:#fff;}
+  .emergency-strip .container{display:flex; align-items:center; justify-content:center; gap:12px; padding:11px 28px; text-align:center; flex-wrap:wrap; font-size:13.5px; font-weight:600;}
+  .emergency-strip svg{width:16px; height:16px;}
+  .emergency-strip a{text-decoration:underline; text-underline-offset:3px;}
+
+  section{padding:84px 0;}
+  .section-head{max-width:640px; margin-bottom:48px;}
+  .section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+  .section-head h2{font-size:clamp(27px,3.1vw,38px); color:var(--teal-900);}
+  .section-head p{color:var(--muted); font-size:16px; margin-top:14px;}
+  .alt-bg{background:var(--mint-050);}
+
+  /* Locations */
+  .loc-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .loc-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px; position:relative;}
+  .loc-card .tag{display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--teal-700); background:var(--mint-100); padding:5px 11px; border-radius:100px; margin-bottom:14px;}
+  .loc-card h3{font-size:20px; margin-bottom:6px;}
+  .loc-card p{font-size:14px; color:var(--muted); margin-bottom:4px;}
+  .loc-card .loc-meta{margin-top:16px; display:grid; gap:8px;}
+  .loc-card .loc-meta div{display:flex; gap:9px; align-items:flex-start; font-size:13.6px; color:var(--ink);}
+  .loc-card .loc-meta svg{width:15px; height:15px; stroke:var(--teal-700); flex-shrink:0; margin-top:2px;}
+  @media (max-width:820px){ .loc-grid{grid-template-columns:1fr;} }
+
+  /* Departments */
+  .dept-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .dept-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:26px 22px; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;}
+  .dept-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:transparent;}
+  .dept-icon{width:46px; height:46px; border-radius:12px; background:var(--mint-100); display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
+  .dept-icon svg{width:24px; height:24px; stroke:var(--teal-800);}
+  .dept-card h3{font-size:17px; margin-bottom:6px;}
+  .dept-card p{font-size:13.8px; color:var(--muted); margin-bottom:14px;}
+  .dept-card a.link{font-size:13px; font-weight:700; color:var(--teal-700); display:inline-flex; align-items:center; gap:5px;}
+  .dept-card a.link svg{width:13px; height:13px; transition:transform .2s ease;}
+  .dept-card a.link:hover svg{transform:translateX(3px);}
+  @media (max-width:980px){ .dept-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .dept-grid{grid-template-columns:1fr;} }
+
+  /* Doctors + duty badges */
+  .doctor-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .doctor-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; transition:box-shadow .2s ease, transform .2s ease;}
+  .doctor-card:hover{box-shadow:var(--shadow-md); transform:translateY(-4px);}
+  .doctor-photo{height:140px; display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:600; font-size:28px; color:#fff; position:relative;}
+  .duty-badge{position:absolute; top:10px; right:10px; font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; padding:4px 9px; border-radius:100px; display:flex; align-items:center; gap:5px; background:rgba(255,255,255,.92); color:var(--ink);}
+  .duty-badge .d-dot{width:7px; height:7px; border-radius:50%; background:#9AA6A3;}
+  .duty-badge.on .d-dot{background:#39B678; box-shadow:0 0 0 2px rgba(57,182,120,.25);}
+  .duty-badge.on{color:#0B4F4A;}
+  .doctor-body{padding:16px 18px 20px;}
+  .doctor-body h3{font-size:15.5px; margin-bottom:3px;}
+  .doctor-body .spec{font-size:12px; color:var(--coral); font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin-bottom:8px;}
+  .doctor-body .meta{font-size:12.5px; color:var(--muted); margin-bottom:12px; display:flex; gap:12px; flex-wrap:wrap;}
+  .doctor-body .meta span{display:flex; align-items:center; gap:5px;}
+  .doctor-body .meta svg{width:12px; height:12px;}
+  @media (max-width:980px){ .doctor-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .doctor-grid{grid-template-columns:1fr;} }
+  .roster-refresh{display:flex; justify-content:center; margin-top:26px;}
+
+  /* Why choose us */
+  .why-wrap{display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; align-items:center;}
+  .why-visual{background:var(--teal-900); border-radius:22px; padding:34px; color:#fff; display:flex; flex-direction:column; justify-content:center; gap:18px; min-height:360px;}
+  .why-visual .accred{display:flex; align-items:center; gap:12px; background:rgba(255,255,255,.06); padding:14px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.08);}
+  .why-visual .accred svg{width:22px; height:22px; flex-shrink:0; stroke:#39E29D;}
+  .why-visual .accred b{display:block; font-size:14px;}
+  .why-visual .accred span{font-size:12.5px; color:#9FDDD3;}
+  .why-list{display:grid; gap:20px;}
+  .why-item{display:flex; gap:16px;}
+  .why-item .num{font-family:var(--mono); font-weight:600; font-size:13.5px; color:var(--coral); width:32px; height:32px; border-radius:50%; background:var(--coral-100); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .why-item h3{font-size:16.5px; margin-bottom:5px;}
+  .why-item p{font-size:14px; color:var(--muted);}
+  @media (max-width:980px){ .why-wrap{grid-template-columns:1fr;} }
+
+  /* Appointment */
+  .appt-wrap{display:grid; grid-template-columns:.85fr 1.15fr; background:var(--teal-900); border-radius:26px; overflow:hidden;}
+  .appt-info{padding:50px 42px; color:#fff;}
+  .appt-info .eyebrow{color:#9FDDD3;}
+  .appt-info .eyebrow::before{background:var(--coral);}
+  .appt-info h2{font-size:clamp(25px,2.9vw,32px); margin-bottom:16px;}
+  .appt-info p{color:#CFE7E2; font-size:14.5px; margin-bottom:26px;}
+  .appt-info ul{display:grid; gap:13px;}
+  .appt-info li{display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#E4F3F0;}
+  .appt-info li svg{width:18px; height:18px; stroke:#39E29D; flex-shrink:0; margin-top:1px;}
+  .appt-form{background:#fff; padding:46px 42px;}
+  .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .form-field{display:flex; flex-direction:column; gap:7px; margin-bottom:16px;}
+  .form-field.full{grid-column:1/-1;}
+  .form-field label{font-size:12px; font-weight:700; color:var(--teal-900); text-transform:uppercase; letter-spacing:.04em;}
+  .form-field input, .form-field select, .form-field textarea{border:1.5px solid var(--line); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:14.5px; color:var(--ink); background:var(--mint-050); transition:border-color .18s ease, background .18s ease;}
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus{border-color:var(--teal-700); background:#fff; outline:none;}
+  .form-field textarea{resize:vertical; min-height:80px;}
+  .form-note{font-size:12px; color:var(--muted); margin-top:14px; text-align:center;}
+  .form-success{display:none; align-items:center; gap:10px; background:var(--mint-100); border:1px solid var(--teal-600); color:var(--teal-900); padding:14px 16px; border-radius:12px; font-size:13.5px; font-weight:600; margin-bottom:16px;}
+  .form-success.show{display:flex;}
+  .form-success svg{width:18px; height:18px; stroke:var(--teal-800); flex-shrink:0;}
+  @media (max-width:980px){ .appt-wrap{grid-template-columns:1fr; border-radius:20px;} .appt-info, .appt-form{padding:34px 24px;} }
+  @media (max-width:560px){ .form-grid{grid-template-columns:1fr;} }
+
+  .stats-band{background:var(--mint-100); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .stats-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; padding:42px 0;}
+  .stat{text-align:center;}
+  .stat .num{font-family:var(--mono); font-weight:600; font-size:clamp(26px,3.2vw,38px); color:var(--teal-900);}
+  .stat .label{font-size:12.5px; color:var(--muted); margin-top:6px; text-transform:uppercase; letter-spacing:.05em;}
+  @media (max-width:760px){ .stats-grid{grid-template-columns:repeat(2,1fr);} }
+
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .testi-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:26px; display:flex; flex-direction:column; gap:14px;}
+  .testi-card .stars{display:flex; gap:3px;}
+  .testi-card svg{width:14px; height:14px; fill:var(--coral); stroke:none;}
+  .testi-card p.quote{font-size:14.5px; color:var(--ink); flex-grow:1;}
+  .testi-person{display:flex; align-items:center; gap:12px;}
+  .avatar-sm{width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:13px; font-family:var(--display); flex-shrink:0;}
+  .testi-person b{display:block; font-size:13.5px;}
+  .testi-person span{font-size:12px; color:var(--muted);}
+  @media (max-width:980px){ .testi-grid{grid-template-columns:1fr;} }
+
+  .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .blog-card{border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#fff; transition:box-shadow .2s ease, transform .2s ease;}
+  .blog-card:hover{box-shadow:var(--shadow-md); transform:translateY(-4px);}
+  .blog-thumb{height:140px; display:flex; align-items:center; justify-content:center;}
+  .blog-thumb svg{width:40px; height:40px; stroke:#fff;}
+  .blog-body{padding:20px;}
+  .blog-body .tag{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--coral); margin-bottom:9px; display:block;}
+  .blog-body h3{font-size:16px; margin-bottom:8px;}
+  .blog-body p{font-size:13.5px; color:var(--muted); margin-bottom:12px;}
+  .blog-body .read{font-size:12.5px; font-weight:700; color:var(--teal-700);}
+  @media (max-width:980px){ .blog-grid{grid-template-columns:1fr;} }
+
+  .insurance-strip{padding:38px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .insurance-strip .label{text-align:center; font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:24px; font-weight:600;}
+  .insurance-row{display:flex; justify-content:center; align-items:center; gap:40px; flex-wrap:wrap;}
+  .insurance-row .badge{font-family:var(--display); font-weight:600; font-size:18px; color:var(--teal-800); opacity:.65;}
+
+  .faq-wrap{max-width:820px; margin:0 auto; display:grid; gap:14px;}
+  .faq-item{border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff;}
+  .faq-q{width:100%; display:flex; align-items:center; justify-content:space-between; padding:19px 21px; background:none; border:none; text-align:left; font-size:15px; font-weight:700; color:var(--ink);}
+  .faq-q svg{width:18px; height:18px; flex-shrink:0; transition:transform .25s ease; stroke:var(--teal-700);}
+  .faq-item.open .faq-q svg{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .faq-a p{padding:0 21px 19px; font-size:14px; color:var(--muted);}
+  .faq-item.open .faq-a{max-height:220px;}
+
+  .contact-wrap{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
+  .contact-cards{display:grid; gap:16px;}
+  .contact-card{display:flex; gap:16px; padding:20px; border:1px solid var(--line); border-radius:14px; background:#fff;}
+  .contact-card .ic{width:42px; height:42px; border-radius:10px; background:var(--mint-100); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .contact-card .ic svg{width:20px; height:20px; stroke:var(--teal-800);}
+  .contact-card h3{font-size:15px; margin-bottom:4px;}
+  .contact-card p{font-size:13.5px; color:var(--muted);}
+  .map-block{border-radius:18px; overflow:hidden; height:100%; min-height:320px; background:linear-gradient(135deg, var(--teal-800), var(--teal-900)); position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; padding:26px;}
+  .map-block .pin{display:flex; flex-direction:column; align-items:center; gap:10px; color:#fff; position:relative; z-index:1;}
+  .map-block .pin svg{width:30px; height:30px; stroke:var(--coral);}
+  .map-grid-lines{position:absolute; inset:0; opacity:.15; background-image:linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px); background-size:36px 36px;}
+  @media (max-width:900px){ .contact-wrap{grid-template-columns:1fr;} }
+
+  footer.site{background:var(--teal-900); color:#CFE7E2; padding-top:60px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:40px; padding-bottom:42px; border-bottom:1px solid rgba(255,255,255,.12);}
+  .footer-grid h4{color:#fff; font-family:var(--body); font-size:13px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:17px;}
+  .footer-grid ul{display:grid; gap:11px;}
+  .footer-grid a{font-size:13.5px; opacity:.85;}
+  .footer-grid a:hover{opacity:1; text-decoration:underline;}
+  .footer-brand .logo{color:#fff; margin-bottom:14px;}
+  .footer-brand .logo .mark{background:rgba(255,255,255,.12);}
+  .footer-brand p{font-size:13.5px; opacity:.8; max-width:280px; margin-bottom:16px;}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; padding:20px 0; font-size:12.5px; opacity:.75; flex-wrap:wrap; gap:10px;}
+  .footer-bottom .legal{display:flex; gap:18px;}
+  @media (max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr; row-gap:32px;} }
+  @media (max-width:560px){ .footer-grid{grid-template-columns:1fr;} }
+
+  /* Floating actions */
+  .fab-stack{position:fixed; right:20px; bottom:20px; z-index:90; display:flex; flex-direction:column; align-items:flex-end; gap:12px;}
+  .fab-emergency{background:var(--coral); color:#fff; padding:15px 20px; border-radius:100px; display:flex; align-items:center; gap:9px; font-weight:700; font-size:14px; box-shadow:0 10px 24px rgba(255,102,89,.4); transition:transform .2s ease; border:none;}
+  .fab-emergency:hover{transform:translateY(-3px);}
+  .fab-emergency svg{width:17px; height:17px;}
+  .back-to-top{position:fixed; left:20px; bottom:20px; z-index:90; width:42px; height:42px; border-radius:50%; background:var(--teal-900); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-md); opacity:0; pointer-events:none; transition:opacity .2s ease; border:none;}
+  .back-to-top.show{opacity:1; pointer-events:auto;}
+  .back-to-top svg{width:16px; height:16px;}
+  .fab-chat{position:fixed; left:20px; bottom:78px; z-index:90; width:52px; height:52px; border-radius:50%; background:var(--teal-900); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-md); border:none; transition:transform .2s ease;}
+  .fab-chat:hover{transform:translateY(-3px);}
+  .fab-chat svg{width:22px; height:22px;}
+  .fab-chat .ping{position:absolute; top:-2px; right:-2px; width:12px; height:12px; border-radius:50%; background:#39E29D; border:2px solid #fff;}
+  @media (max-width:600px){ .fab-emergency span.txt{display:none;} .fab-emergency{padding:15px; width:52px; height:52px; justify-content:center;} }
+
+  /* Modal (overlay) base */
+  .overlay{position:fixed; inset:0; background:rgba(11,33,30,.55); z-index:200; display:none; align-items:center; justify-content:center; padding:20px;}
+  .overlay.show{display:flex;}
+  .modal-card{background:#fff; border-radius:20px; max-width:440px; width:100%; padding:30px; box-shadow:var(--shadow-md); max-height:90vh; overflow-y:auto;}
+  .modal-card h3{font-size:20px; color:var(--teal-900); margin-bottom:10px;}
+  .modal-card p{font-size:14px; color:var(--muted); margin-bottom:18px;}
+  .modal-close{display:flex; justify-content:flex-end; margin-bottom:4px;}
+  .modal-close button{background:none; border:none; color:var(--muted); font-size:20px; line-height:1; padding:4px;}
+
+  /* Emergency modal specific */
+  .sos-icon{width:56px; height:56px; border-radius:16px; background:var(--coral-100); display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
+  .sos-icon svg{width:28px; height:28px; stroke:var(--coral-dark);}
+  .hold-btn{position:relative; width:100%; padding:18px; border-radius:14px; background:var(--coral-100); border:2px solid var(--coral); color:var(--coral-dark); font-weight:700; font-size:14.5px; overflow:hidden; text-align:center;}
+  .hold-btn .fill{position:absolute; left:0; top:0; bottom:0; width:0%; background:var(--coral); z-index:0; transition:width .05s linear;}
+  .hold-btn span{position:relative; z-index:1;}
+  .hold-btn.filling span{color:#fff;}
+  .sos-steps{display:grid; gap:10px; margin:16px 0;}
+  .sos-step{display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--muted);}
+  .sos-step svg{width:16px; height:16px; stroke:var(--teal-700); flex-shrink:0; margin-top:2px;}
+  .sos-result{display:none;}
+  .sos-result.show{display:block;}
+  .sos-result .ok-icon{width:56px; height:56px; border-radius:16px; background:var(--mint-100); display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
+  .sos-result .ok-icon svg{width:28px; height:28px; stroke:var(--teal-800);}
+  .sos-data{background:var(--mint-050); border:1px solid var(--line); border-radius:12px; padding:14px 16px; font-size:13px; margin:14px 0; display:grid; gap:6px;}
+  .sos-data div{display:flex; justify-content:space-between; gap:10px;}
+  .sos-data b{font-family:var(--mono); font-weight:600; color:var(--ink); text-align:right;}
+  .notif-line{display:flex; gap:8px; align-items:center; font-size:12.5px; color:var(--teal-800); padding:6px 0; border-top:1px dashed var(--line);}
+  .notif-line svg{width:13px; height:13px; stroke:var(--teal-700); flex-shrink:0;}
+
+  /* App view (login + dashboards) */
+  .app-view{position:fixed; inset:0; background:var(--mint-050); z-index:150; overflow-y:auto; display:none;}
+  .app-view.show{display:block;}
+  .app-topbar{background:var(--teal-900); color:#fff; padding:16px 0; position:sticky; top:0; z-index:2;}
+  .app-topbar .container{display:flex; align-items:center; justify-content:space-between;}
+  .app-topbar .logo{color:#fff;}
+  .app-topbar .logo .mark{background:rgba(255,255,255,.12);}
+  .app-actions{display:flex; align-items:center; gap:12px;}
+  .role-chip{font-family:var(--mono); font-size:11.5px; background:rgba(255,255,255,.12); padding:6px 12px; border-radius:100px; letter-spacing:.05em; text-transform:uppercase;}
+  .app-body{padding:44px 0 70px;}
+  .auth-wrap{max-width:920px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:0; background:#fff; border-radius:22px; overflow:hidden; box-shadow:var(--shadow-md);}
+  .auth-side{background:var(--teal-900); color:#fff; padding:44px 36px;}
+  .auth-side h2{font-size:26px; margin-bottom:14px;}
+  .auth-side p{font-size:14px; color:#CFE7E2; margin-bottom:24px;}
+  .demo-btn{width:100%; text-align:left; display:flex; align-items:center; gap:12px; padding:13px 14px; border-radius:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); color:#fff; margin-bottom:10px;}
+  .demo-btn:hover{background:rgba(255,255,255,.12);}
+  .demo-btn .di{width:32px; height:32px; border-radius:8px; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .demo-btn .di svg{width:16px; height:16px;}
+  .demo-btn b{display:block; font-size:13.5px;}
+  .demo-btn span{font-size:11.5px; color:#9FDDD3;}
+  .auth-form{padding:44px 36px;}
+  .role-toggle{display:flex; gap:8px; margin-bottom:20px; background:var(--mint-050); padding:5px; border-radius:12px;}
+  .role-toggle button{flex:1; padding:10px; border-radius:9px; border:none; background:none; font-size:13px; font-weight:700; color:var(--muted);}
+  .role-toggle button.active{background:#fff; color:var(--teal-900); box-shadow:var(--shadow-sm);}
+  .disclaimer-box{background:var(--gold-100); border:1px solid var(--gold); border-radius:10px; padding:11px 13px; font-size:12px; color:#7A5A17; margin-top:14px; display:flex; gap:8px;}
+  .disclaimer-box svg{width:15px; height:15px; flex-shrink:0; stroke:#7A5A17;}
+  @media (max-width:800px){ .auth-wrap{grid-template-columns:1fr;} }
+
+  .dash-grid{display:grid; grid-template-columns:280px 1fr; gap:26px; align-items:start;}
+  .dash-side{background:#fff; border:1px solid var(--line); border-radius:16px; padding:22px; position:sticky; top:96px;}
+  .dash-side .who{display:flex; gap:12px; align-items:center; margin-bottom:18px; padding-bottom:18px; border-bottom:1px solid var(--line);}
+  .dash-side .who .av{width:44px; height:44px; border-radius:50%; background:var(--teal-800); color:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:600;}
+  .dash-side .who b{display:block; font-size:14.5px;}
+  .dash-side .who span{font-size:12px; color:var(--muted);}
+  .dash-nav{display:grid; gap:6px;}
+  .dash-nav button{text-align:left; padding:10px 12px; border-radius:9px; background:none; border:none; font-size:13.5px; font-weight:600; color:var(--ink); display:flex; align-items:center; gap:9px;}
+  .dash-nav button.active, .dash-nav button:hover{background:var(--mint-100); color:var(--teal-900);}
+  .dash-nav svg{width:16px; height:16px;}
+  .dash-main{display:grid; gap:22px;}
+  .panel{background:#fff; border:1px solid var(--line); border-radius:16px; padding:26px;}
+  .panel h3{font-size:17px; margin-bottom:4px; color:var(--teal-900);}
+  .panel .sub{font-size:13px; color:var(--muted); margin-bottom:18px;}
+  .duty-toggle{display:flex; align-items:center; justify-content:space-between; background:var(--mint-050); border:1px solid var(--line); border-radius:14px; padding:20px; margin-bottom:8px;}
+  .duty-toggle .dstat{display:flex; align-items:center; gap:10px;}
+  .duty-toggle .d-dot-lg{width:12px; height:12px; border-radius:50%; background:#9AA6A3;}
+  .duty-toggle.on .d-dot-lg{background:#39B678; box-shadow:0 0 0 4px rgba(57,182,120,.18);}
+  .duty-toggle .dstat b{font-size:15px; display:block;}
+  .duty-toggle .dstat span{font-size:12px; color:var(--muted);}
+  table.data-table{width:100%; border-collapse:collapse; font-size:13.5px;}
+  table.data-table th{text-align:left; font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); padding:9px 10px; border-bottom:1.5px solid var(--line);}
+  table.data-table td{padding:11px 10px; border-bottom:1px solid var(--line); vertical-align:top;}
+  table.data-table tr:last-child td{border-bottom:none;}
+  .pill{display:inline-flex; align-items:center; gap:5px; padding:4px 10px; border-radius:100px; font-size:11.5px; font-weight:700;}
+  .pill.pending{background:var(--gold-100); color:#8A6A1F;}
+  .pill.confirmed{background:var(--mint-100); color:var(--teal-800);}
+  .pill.resolved{background:var(--mint-100); color:var(--teal-800);}
+  .pill.open{background:var(--coral-100); color:var(--coral-dark);}
+  .empty-note{font-size:13.5px; color:var(--muted); padding:20px; text-align:center; background:var(--mint-050); border-radius:12px;}
+  .mini-btn{padding:7px 13px; border-radius:100px; font-size:12px; font-weight:700; border:1.5px solid var(--teal-700); color:var(--teal-800); background:none;}
+  .mini-btn:hover{background:var(--teal-900); color:#fff; border-color:var(--teal-900);}
+  .roster-row{display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--line); font-size:13.5px;}
+  .roster-row:last-child{border-bottom:none;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;}
+  @media (max-width:900px){ .dash-grid{grid-template-columns:1fr;} .dash-side{position:static;} }
+  @media (max-width:560px){ .field-row{grid-template-columns:1fr;} }
+
+  /* Chat widget */
+  .chat-panel{position:fixed; left:20px; bottom:140px; width:340px; max-width:calc(100vw - 40px); height:440px; background:#fff; border-radius:18px; box-shadow:var(--shadow-md); z-index:95; display:none; flex-direction:column; overflow:hidden; border:1px solid var(--line);}
+  .chat-panel.show{display:flex;}
+  .chat-head{background:var(--teal-900); color:#fff; padding:14px 16px; display:flex; align-items:center; justify-content:space-between;}
+  .chat-head b{font-size:13.5px; display:block;}
+  .chat-head span{font-size:11px; color:#9FDDD3;}
+  .chat-head button{background:none; border:none; color:#fff; font-size:18px;}
+  .chat-body{flex-grow:1; overflow-y:auto; padding:14px; display:flex; flex-direction:column; gap:10px; background:var(--mint-050);}
+  .msg{max-width:82%; padding:9px 12px; border-radius:12px; font-size:13px; line-height:1.45;}
+  .msg.bot{background:#fff; border:1px solid var(--line); align-self:flex-start; border-bottom-left-radius:4px;}
+  .msg.user{background:var(--teal-900); color:#fff; align-self:flex-end; border-bottom-right-radius:4px;}
+  .chat-input-row{display:flex; gap:8px; padding:12px; border-top:1px solid var(--line);}
+  .chat-input-row input{flex-grow:1; border:1.5px solid var(--line); border-radius:10px; padding:10px 12px; font-size:13px; font-family:inherit;}
+  .chat-input-row button{background:var(--coral); color:#fff; border:none; border-radius:10px; padding:0 14px; font-weight:700;}
+
+  /* Toasts */
+  .toast-stack{position:fixed; top:16px; right:16px; z-index:300; display:grid; gap:8px;}
+  .toast{background:var(--teal-900); color:#fff; padding:12px 16px; border-radius:10px; font-size:13px; box-shadow:var(--shadow-md); display:flex; align-items:center; gap:8px; max-width:300px; animation:toastIn .25s ease;}
+  .toast svg{width:15px; height:15px; stroke:#39E29D; flex-shrink:0;}
+  @keyframes toastIn{from{opacity:0; transform:translateY(-8px);} to{opacity:1; transform:translateY(0);}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<div class="topbar">
+  <div class="container">
+    <div class="left">
+      <a href="tel:+27115550123"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Sandton: +27 11 555 0123</a>
+      <span class="hide-mobile"><a href="tel:+27155550456"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Polokwane: +27 15 555 0456</a></span>
+    </div>
+    <div class="right">
+      <span class="hide-mobile">Gauteng &amp; Limpopo · 24/7 Emergency</span>
+      <a class="portal" href="#" id="portalTopLink">Login / Portal</a>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="container nav-row">
+    <a href="#main" class="logo">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+      <span>Health Village 24 <small>Clinic</small></span>
+    </a>
+    <nav class="main-links" id="mainNav">
+      <a href="#locations">Locations</a>
+      <a href="#departments">Departments</a>
+      <a href="#doctors">Doctors On Duty</a>
+      <a href="#tips">Health Tips</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#appointment" class="btn btn-outline btn-sm">Book Appointment</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" style="padding-top:0; padding-bottom:0;">
+    <div class="container">
+      <div>
+        <div class="eyebrow">24/7 Emergency &amp; Specialist Care</div>
+        <h1>Modern medicine, close to <em>where you live.</em></h1>
+        <p class="lead">Health Village 24 Clinic pairs advanced diagnostics with a team that listens — two branches across Gauteng and Limpopo, same-week appointments, and a care plan built around you.</p>
+        <div class="cta-row">
+          <a href="#appointment" class="btn btn-primary">Book an Appointment</a>
+          <a href="#departments" class="btn btn-outline">Explore Departments</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-item"><div class="num">2</div><div class="label">SA Branches</div></div>
+          <div class="trust-item"><div class="num">180+</div><div class="label">Specialist Doctors</div></div>
+          <div class="trust-item"><div class="num">98%</div><div class="label">Patient Satisfaction</div></div>
+          <div class="trust-item"><div class="num">24/7</div><div class="label">Emergency Room</div></div>
+        </div>
+        <div class="branch-pills">
+          <span class="branch-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Sandton, Gauteng</span>
+          <span class="branch-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Polokwane, Limpopo</span>
+        </div>
+      </div>
+
+      <div class="monitor" aria-hidden="true">
+        <div class="monitor-head">
+          <span style="font-family:var(--mono); font-size:12px; letter-spacing:.08em; color:#9FDDD3;">PATIENT MONITOR</span>
+          <span class="status"><span class="dot-live"></span>LIVE</span>
+        </div>
+        <div class="ecg-wrap">
+          <svg viewBox="0 0 400 70" preserveAspectRatio="none">
+            <path class="ecg-line" d="M0 35 L60 35 L75 35 L85 10 L95 60 L105 20 L115 35 L140 35 L400 35"/>
+          </svg>
+        </div>
+        <div class="vitals-grid">
+          <div class="vital"><div class="v-label">Heart Rate</div><div class="v-value">72<span class="v-unit">bpm</span></div></div>
+          <div class="vital"><div class="v-label">SpO₂</div><div class="v-value">98<span class="v-unit">%</span></div></div>
+          <div class="vital"><div class="v-label">Blood Pressure</div><div class="v-value">120<span class="v-unit">/80</span></div></div>
+        </div>
+        <div class="duty-mini"><span>Doctors on duty right now</span><b id="heroDutyCount">—</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pulse-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path class="spike" d="M0 17 L520 17 L535 17 L546 4 L557 30 L568 10 L579 17 L595 17 L1200 17"/></svg>
+  </div>
+
+  <div class="emergency-strip">
+    <div class="container">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+      Life-threatening emergency? Call national ambulance <a href="tel:10177">10177</a> or <a href="tel:112">112</a> — or use the on-page SOS button to alert our on-duty team with your location.
+    </div>
+  </div>
+
+  <!-- Locations -->
+  <section id="locations">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow" style="justify-content:center;">Our Branches</div>
+        <h2>Two locations, one patient record</h2>
+        <p>Visit whichever branch suits you — your history travels with you across both.</p>
+      </div>
+      <div class="loc-grid">
+        <div class="loc-card">
+          <span class="tag">Gauteng</span>
+          <h3>Health Village 24 — Sandton</h3>
+          <p>Our flagship campus with full diagnostic imaging, day surgery, and a 24-hour emergency department.</p>
+          <div class="loc-meta">
+            <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>14 Rivonia Road, Sandton, Johannesburg, 2196</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+27 11 555 0123</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Outpatients Mon–Sat 7am–8pm · Emergency 24/7</div>
+          </div>
+        </div>
+        <div class="loc-card">
+          <span class="tag">Limpopo</span>
+          <h3>Health Village 24 — Polokwane</h3>
+          <p>Community-focused clinic covering general practice, maternity, pediatrics, and urgent care.</p>
+          <div class="loc-meta">
+            <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>52 Bodenstein Street, Polokwane, Limpopo, 0699</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+27 15 555 0456</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Outpatients Mon–Sat 7am–6pm · Emergency 24/7</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Departments -->
+  <section id="departments" class="alt-bg">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow" style="justify-content:center;">Departments</div>
+        <h2>Specialist care under one roof</h2>
+        <p>From routine checkups to complex procedures, our departments are equipped with the latest technology and staffed by qualified specialists.</p>
+      </div>
+      <div class="dept-grid">
+        <div class="dept-card"><div class="dept-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Cardiology</h3><p>Heart screenings, angioplasty, and long-term cardiac rehabilitation.</p><a class="link" href="#appointment">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="dept-card"><div class="dept-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2a2.5 2.5 0 0 1 5 0V4a2 2 0 0 0 2 2h1a2.5 2.5 0 0 1 0 5h-1a2 2 0 0 0-2 2v1a2.5 2.5 0 0 1-5 0v-1a2 2 0 0 0-2-2H6a2.5 2.5 0 0 1 0-5h1.5a2 2 0 0 0 2-2z"/></svg></div><h3>Neurology</h3><p>Diagnosis and treatment of brain, spine, and nervous system conditions.</p><a class="link" href="#appointment">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="dept-card"><div class="dept-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v5m0 0-4 9m4-9 4 9M8 12h8"/></svg></div><h3>Orthopedics</h3><p>Joint replacement, sports injury care, and physical rehabilitation.</p><a class="link" href="#appointment">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="dept-card"><div class="dept-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.6c-4-2.4-8-5.4-8-9.9A4.7 4.7 0 0 1 12 8a4.7 4.7 0 0 1 8 2.7c0 4.5-4 7.5-8 9.9z"/></svg></div><h3>Pediatrics</h3><p>Compassionate, child-focused care from newborn checkups to adolescence.</p><a class="link" href="#appointment">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="dept-card"><div class="dept-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L7 20"/></svg></div><h3>Radiology &amp; Imaging</h3><p>MRI, CT, ultrasound, and X-ray diagnostics with rapid turnaround.</p><a class="link" href="#appointment">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="dept-card"><div class="dept-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 6 6 9.5 6 13a6 6 0 0 0 12 0c0-3.5-2-7-6-11z"/></svg></div><h3>Obstetrics &amp; Gynecology</h3><p>Prenatal care, delivery services, and women's health screenings.</p><a class="link" href="#appointment">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="dept-card"><div class="dept-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v3a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"/><path d="M8 11v2a4 4 0 0 0 8 0v-2M12 17v5M9 22h6"/></svg></div><h3>Dermatology</h3><p>Skin, hair, and nail care — from acne treatment to skin cancer screening.</p><a class="link" href="#appointment">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="dept-card"><div class="dept-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.5-1.5 4 0 5.5s4 1.5 5.5 0l9-9c1.5-1.5 1.5-4 0-5.5s-4-1.5-5.5 0z"/><path d="m12 15-3-3"/><path d="m17 10 1.5-1.5"/></svg></div><h3>Dental Care</h3><p>General dentistry, orthodontics, and oral surgery for the whole family.</p><a class="link" href="#appointment">Book a visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section id="why">
+    <div class="container why-wrap">
+      <div class="why-visual">
+        <div class="accred"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7z"/><path d="m9 12 2 2 4-4"/></svg><div><b>Council-registered practitioners</b><span>All clinicians registered with the HPCSA</span></div></div>
+        <div class="accred"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><div><b>180+ Specialists</b><span>Across both branches and 20 departments</span></div></div>
+        <div class="accred"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><div><b>Live doctor availability</b><span>See who's on duty before you travel in</span></div></div>
+      </div>
+      <div>
+        <div class="section-head" style="margin-bottom:30px;">
+          <div class="eyebrow">Why Health Village 24</div>
+          <h2>Care built around outcomes, not just visits</h2>
+        </div>
+        <div class="why-list">
+          <div class="why-item"><div class="num">01</div><div><h3>Integrated diagnostics</h3><p>On-site labs and imaging mean most results are ready the same day.</p></div></div>
+          <div class="why-item"><div class="num">02</div><div><h3>One patient record</h3><p>Every specialist you see, at either branch, shares a single up-to-date chart.</p></div></div>
+          <div class="why-item"><div class="num">03</div><div><h3>Transparent pricing</h3><p>Clear cost estimates before treatment, with direct billing to major medical aids.</p></div></div>
+          <div class="why-item"><div class="num">04</div><div><h3>Round-the-clock support</h3><p>Our nurse line and Emergency Department never close — plus an SOS alert button on this site.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors on duty -->
+  <section id="doctors" class="alt-bg">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow" style="justify-content:center;">Our Physicians</div>
+        <h2>Doctors on duty right now</h2>
+        <p>Status updates live as doctors check in and out for their shift, so you know who's available before you arrive.</p>
+      </div>
+      <div class="doctor-grid" id="doctorGrid"></div>
+      <div class="roster-refresh"><button class="btn btn-outline btn-sm" id="refreshRosterBtn">Refresh availability</button></div>
+    </div>
+  </section>
+
+  <!-- Appointment booking -->
+  <section id="appointment">
+    <div class="container">
+      <div class="appt-wrap">
+        <div class="appt-info">
+          <div class="eyebrow">Book an Appointment</div>
+          <h2>Get seen this week, not next month.</h2>
+          <p>Fill in your details and our care coordinators will confirm your slot by email and SMS. Same-day emergency slots are always available by phone.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>No referral needed for most specialties</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>Direct billing with most major medical aids</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>Free rescheduling up to 24 hours before</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>Your visit is saved to your patient portal history</li>
+          </ul>
+        </div>
+        <div class="appt-form">
+          <div class="form-success" id="formSuccess"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>Request received — confirmation queued to your email and phone.</div>
+          <form id="apptForm" novalidate>
+            <div class="form-grid">
+              <div class="form-field"><label for="fname">Full name</label><input type="text" id="fname" name="fname" placeholder="Thandiwe Nkosi" required></div>
+              <div class="form-field"><label for="fphone">Phone number</label><input type="tel" id="fphone" name="fphone" placeholder="082 123 4567" required></div>
+              <div class="form-field full"><label for="femail">Email address</label><input type="email" id="femail" name="femail" placeholder="you@example.com" required></div>
+              <div class="form-field"><label for="fbranch">Branch</label>
+                <select id="fbranch" name="fbranch" required>
+                  <option value="">Select branch</option>
+                  <option>Sandton, Gauteng</option>
+                  <option>Polokwane, Limpopo</option>
+                </select>
+              </div>
+              <div class="form-field"><label for="fdept">Department</label>
+                <select id="fdept" name="fdept" required>
+                  <option value="">Select department</option>
+                  <option>Cardiology</option><option>Neurology</option><option>Orthopedics</option><option>Pediatrics</option>
+                  <option>Radiology &amp; Imaging</option><option>Obstetrics &amp; Gynecology</option><option>Dermatology</option><option>Dental Care</option>
+                </select>
+              </div>
+              <div class="form-field"><label for="fdate">Preferred date</label><input type="date" id="fdate" name="fdate" required></div>
+              <div class="form-field full"><label for="fmsg">Reason for visit (optional)</label><textarea id="fmsg" name="fmsg" placeholder="Briefly tell us what's going on..."></textarea></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Request Appointment</button>
+            <p class="form-note">By submitting, you agree to be contacted by phone, SMS or email to confirm your visit. This request is also saved to your patient portal history.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-band">
+    <div class="container stats-grid">
+      <div class="stat"><div class="num" data-count="30">0</div><div class="label">Years of Service</div></div>
+      <div class="stat"><div class="num" data-count="180">0</div><div class="label">Expert Doctors</div></div>
+      <div class="stat"><div class="num" data-count="42000">0</div><div class="label">Patients Treated / yr</div></div>
+      <div class="stat"><div class="num" data-count="2">0</div><div class="label">Branches — GP &amp; LIM</div></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section-head center"><div class="eyebrow" style="justify-content:center;">Patient Stories</div><h2>Trusted by the families we treat</h2></div>
+      <div class="testi-grid">
+        <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"From the ER to follow-up care, every step felt coordinated. Dr. Reyes explained everything in plain language and never rushed us."</p><div class="testi-person"><div class="avatar-sm" style="background:#146B63;">LT</div><div><b>Lerato Twala</b><span>Cardiology patient, Sandton</span></div></div></div>
+        <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"Booking online took two minutes and I got a same-week slot for my son's checkup. The pediatrics team is wonderful with kids."</p><div class="testi-person"><div class="avatar-sm" style="background:#1C8078;">MP</div><div><b>Marcus Phahlane</b><span>Pediatrics parent, Polokwane</span></div></div></div>
+        <div class="testi-card"><div class="stars">★★★★★</div><p class="quote">"My knee replacement recovery was smoother than I expected — the physical therapy team kept me on track every week."</p><div class="testi-person"><div class="avatar-sm" style="background:#0B4F4A;">RH</div><div><b>Rosa Hlongwane</b><span>Orthopedics patient, Sandton</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tips" class="alt-bg">
+    <div class="container">
+      <div class="section-head center"><div class="eyebrow" style="justify-content:center;">Health Library</div><h2>Tips from our care team</h2></div>
+      <div class="blog-grid">
+        <div class="blog-card"><div class="blog-thumb" style="background:linear-gradient(135deg,#146B63,#0B4F4A);"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="blog-body"><span class="tag">Heart Health</span><h3>5 habits that lower blood pressure naturally</h3><p>Small daily changes that add up to real cardiovascular benefit.</p><a class="read" href="#">Read article →</a></div></div>
+        <div class="blog-card"><div class="blog-thumb" style="background:linear-gradient(135deg,#1C8078,#146B63);"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div class="blog-body"><span class="tag">Preventive Care</span><h3>The screening schedule you shouldn't skip after 40</h3><p>A simple, age-by-age guide to checkups that catch problems early.</p><a class="read" href="#">Read article →</a></div></div>
+        <div class="blog-card"><div class="blog-thumb" style="background:linear-gradient(135deg,#0E5D57,#0B4F4A);"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.6c-4-2.4-8-5.4-8-9.9A4.7 4.7 0 0 1 12 8a4.7 4.7 0 0 1 8 2.7c0 4.5-4 7.5-8 9.9z"/></svg></div><div class="blog-body"><span class="tag">Pediatrics</span><h3>Building a vaccination schedule your child will keep</h3><p>What to expect at each stage, and how to make visits less stressful.</p><a class="read" href="#">Read article →</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="insurance-strip">
+    <div class="container">
+      <div class="label">Direct billing accepted from</div>
+      <div class="insurance-row">
+        <span class="badge">Vitality Plus Cover</span><span class="badge">Ubuntu Health Fund</span><span class="badge">Highveld Medical Scheme</span><span class="badge">Baobab Health Cover</span><span class="badge">CapeCare Medical Aid</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="faq">
+    <div class="container">
+      <div class="section-head center"><div class="eyebrow" style="justify-content:center;">FAQ</div><h2>Common questions</h2></div>
+      <div class="faq-wrap">
+        <div class="faq-item"><button class="faq-q">Do I need a referral to see a specialist? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>For most departments, no — you can book directly with a specialist at either branch.</p></div></div>
+        <div class="faq-item"><button class="faq-q">What should I bring to my first appointment? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>Please bring your ID or passport, your medical aid card, a list of current medications, and any prior test results.</p></div></div>
+        <div class="faq-item"><button class="faq-q">How does the emergency SOS button work? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>You hold the confirm button for three seconds to avoid accidental taps, then your device's location is shared with our on-duty team so they can direct you to the nearest branch or dispatch help. For life-threatening emergencies, always call 10177 or 112 first.</p></div></div>
+        <div class="faq-item"><button class="faq-q">Can doctors and patients see who's on duty? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>Yes. Doctors check in and out for their shift from the staff portal, and that status is shown live on the public Doctors On Duty section and inside the doctor dashboard.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="alt-bg">
+    <div class="container">
+      <div class="section-head center"><div class="eyebrow" style="justify-content:center;">Get in Touch</div><h2>Visit or reach us anytime</h2></div>
+      <div class="contact-wrap">
+        <div class="contact-cards">
+          <div class="contact-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h3>Sandton Campus</h3><p>14 Rivonia Road, Sandton, Gauteng, 2196</p></div></div>
+          <div class="contact-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h3>Polokwane Campus</h3><p>52 Bodenstein Street, Polokwane, Limpopo, 0699</p></div></div>
+          <div class="contact-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><h3>Phone</h3><p>Sandton (800) — +27 11 555 0123 · Polokwane — +27 15 555 0456</p></div></div>
+          <div class="contact-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg></div><div><h3>Email</h3><p>care@healthvillage24.co.za</p></div></div>
+        </div>
+        <div class="map-block">
+          <div class="map-grid-lines" aria-hidden="true"></div>
+          <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span style="font-family:var(--mono); font-size:12px;">Sandton, Gauteng</span></div>
+          <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span style="font-family:var(--mono); font-size:12px;">Polokwane, Limpopo</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#main" class="logo"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><span>Health Village 24 <small>Clinic</small></span></a>
+      <p>Precision diagnostics and human-centered care, available around the clock across Gauteng and Limpopo.</p>
+      <div class="social-row" style="display:flex; gap:10px; margin-top:14px;">
+        <a href="#" aria-label="Facebook" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 24 24" fill="#fff" width="15" height="15"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="#" aria-label="Instagram" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" width="15" height="15"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+      </div>
+    </div>
+    <div><h4>Departments</h4><ul><li><a href="#departments">Cardiology</a></li><li><a href="#departments">Neurology</a></li><li><a href="#departments">Orthopedics</a></li><li><a href="#departments">Pediatrics</a></li><li><a href="#departments">Dental Care</a></li></ul></div>
+    <div><h4>Patients</h4><ul><li><a href="#appointment">Book Appointment</a></li><li><a href="#" id="portalFooterLink">Patient Portal</a></li><li><a href="#">Billing &amp; Medical Aid</a></li><li><a href="#faq">FAQ</a></li><li><a href="#tips">Health Library</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>Sandton, Gauteng</li><li>Polokwane, Limpopo</li><li>+27 11 555 0123</li><li>care@healthvillage24.co.za</li></ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Health Village 24 Clinic. All rights reserved.</span>
+    <div class="legal"><a href="#">Privacy (POPIA) Notice</a><a href="#">Terms of Service</a><a href="#">Accessibility</a></div>
+  </div>
+</footer>
+
+<!-- Floating actions -->
+<div class="fab-stack">
+  <button class="fab-emergency" id="sosOpenBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg><span class="txt">Emergency SOS</span></button>
+</div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<button class="fab-chat" id="chatOpenBtn" aria-label="Open help chat" style="position:fixed;"><span class="ping"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+
+<!-- Toasts -->
+<div class="toast-stack" id="toastStack"></div>
+
+<!-- Emergency SOS modal -->
+<div class="overlay" id="sosOverlay">
+  <div class="modal-card">
+    <div class="modal-close"><button id="sosCloseBtn" aria-label="Close">✕</button></div>
+
+    <div id="sosStepConfirm">
+      <div class="sos-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg></div>
+      <h3>Confirm emergency alert</h3>
+      <p>This will notify our on-duty clinical team and share your device's current location. Only use this for a genuine medical emergency.</p>
+      <div class="sos-steps">
+        <div class="sos-step"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Your approximate location will be captured</div>
+        <div class="sos-step"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>On-duty staff at the nearest branch are alerted</div>
+        <div class="sos-step"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Hold for 3 seconds to prevent accidental alerts</div>
+      </div>
+      <button class="hold-btn" id="holdBtn"><span id="holdBtnLabel">Press and hold to confirm</span><div class="fill" id="holdFill"></div></button>
+      <p class="form-note">Life-threatening emergency? Also call <a href="tel:10177" style="font-weight:700;">10177</a> or <a href="tel:112" style="font-weight:700;">112</a> directly.</p>
+    </div>
+
+    <div id="sosStepResult" class="sos-result">
+      <div class="ok-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></div>
+      <h3>Alert sent to on-duty staff</h3>
+      <p>Stay where you are if possible. Our nearest team has been notified with the details below.</p>
+      <div class="sos-data" id="sosDataBox"></div>
+      <div id="sosNotifLog"></div>
+      <button class="btn btn-outline btn-block" id="sosDoneBtn" style="margin-top:14px;">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Login / dashboards app view -->
+<div class="app-view" id="appView">
+  <div class="app-topbar">
+    <div class="container">
+      <a href="#" class="logo" id="appHomeLink"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><span>Health Village 24</span></a>
+      <div class="app-actions">
+        <span class="role-chip" id="roleChip" style="display:none;"></span>
+        <button class="btn btn-ghost btn-sm" id="appCloseBtn">Back to site</button>
+        <button class="btn btn-sm" style="background:var(--coral); color:#fff; display:none;" id="logoutBtn">Log out</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-body container">
+
+    <!-- Login screen -->
+    <div id="authScreen">
+      <div class="auth-wrap">
+        <div class="auth-side">
+          <h2>Staff &amp; Patient Portal</h2>
+          <p>Quick demo access — pick a role to see how the portal adapts. No real account needed.</p>
+          <button class="demo-btn" data-demo="patient"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><span><b>Continue as Patient</b><span>Book visits, view history</span></span></button>
+          <button class="demo-btn" data-demo="doctor"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 12h6M12 9v6"/><circle cx="12" cy="12" r="9"/></svg></span><span><b>Continue as Doctor</b><span>Check in/out, view roster</span></span></button>
+          <button class="demo-btn" data-demo="admin"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7z"/></svg></span><span><b>Continue as Admin</b><span>Alerts, appointments, roster</span></span></button>
+          <div class="disclaimer-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="10"/></svg>Demo authentication only — no password security. Do not enter real medical information here.</div>
+        </div>
+        <div class="auth-form">
+          <div class="role-toggle">
+            <button type="button" class="active" data-role="patient">Patient</button>
+            <button type="button" data-role="doctor">Doctor</button>
+            <button type="button" data-role="admin">Admin</button>
+          </div>
+          <form id="loginForm">
+            <div class="form-field"><label for="loginName">Full name</label><input type="text" id="loginName" placeholder="Your name" required></div>
+            <div class="form-field"><label for="loginEmail">Email address</label><input type="email" id="loginEmail" placeholder="you@example.com" required></div>
+            <div class="form-field" id="loginSpecWrap" style="display:none;"><label for="loginSpec">Specialty</label>
+              <select id="loginSpec"><option>Cardiology</option><option>Neurology</option><option>Orthopedics</option><option>Pediatrics</option><option>Dermatology</option></select>
+            </div>
+            <div class="form-field" id="loginBranchWrap" style="display:none;"><label for="loginBranch">Branch</label>
+              <select id="loginBranch"><option>Sandton, Gauteng</option><option>Polokwane, Limpopo</option></select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Continue</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patient dashboard -->
+    <div id="patientScreen" style="display:none;">
+      <div class="dash-grid">
+        <aside class="dash-side">
+          <div class="who"><div class="av" id="pAvatar">—</div><div><b id="pName">—</b><span>Patient</span></div></div>
+          <nav class="dash-nav">
+            <button class="active" data-panel="pOverview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</button>
+            <button data-panel="pBook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Book Appointment</button>
+            <button data-panel="pHistory"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Visit History</button>
+          </nav>
+        </aside>
+        <div class="dash-main">
+          <div class="panel" data-content="pOverview">
+            <h3>Welcome back</h3>
+            <p class="sub">Here's a quick snapshot of your care.</p>
+            <div class="field-row" style="grid-template-columns:1fr 1fr 1fr;">
+              <div class="loc-card" style="padding:16px;"><span class="tag">Upcoming</span><div id="pUpcomingCount" style="font-family:var(--mono); font-size:24px; color:var(--teal-900);">0</div></div>
+              <div class="loc-card" style="padding:16px;"><span class="tag">Total Visits</span><div id="pTotalCount" style="font-family:var(--mono); font-size:24px; color:var(--teal-900);">0</div></div>
+              <div class="loc-card" style="padding:16px;"><span class="tag">Home Branch</span><div id="pHomeBranch" style="font-size:13.5px; margin-top:6px;">—</div></div>
+            </div>
+          </div>
+          <div class="panel" data-content="pBook">
+            <h3>Book a new appointment</h3>
+            <p class="sub">This saves straight to your visit history.</p>
+            <form id="pBookForm">
+              <div class="field-row">
+                <div class="form-field"><label>Branch</label><select id="pBranch" required><option value="">Select</option><option>Sandton, Gauteng</option><option>Polokwane, Limpopo</option></select></div>
+                <div class="form-field"><label>Department</label><select id="pDept" required><option value="">Select</option><option>Cardiology</option><option>Neurology</option><option>Orthopedics</option><option>Pediatrics</option><option>Radiology &amp; Imaging</option><option>Obstetrics &amp; Gynecology</option><option>Dermatology</option><option>Dental Care</option></select></div>
+              </div>
+              <div class="field-row">
+                <div class="form-field"><label>Preferred date</label><input type="date" id="pDate" required></div>
+                <div class="form-field"><label>Reason (optional)</label><input type="text" id="pReason" placeholder="Brief reason"></div>
+              </div>
+              <button class="btn btn-primary" type="submit">Save appointment</button>
+            </form>
+          </div>
+          <div class="panel" data-content="pHistory">
+            <h3>Visit history</h3>
+            <p class="sub">All appointments booked under your email, across both branches.</p>
+            <div id="pHistoryTableWrap"><div class="empty-note">No visits yet — book your first appointment.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doctor dashboard -->
+    <div id="doctorScreen" style="display:none;">
+      <div class="dash-grid">
+        <aside class="dash-side">
+          <div class="who"><div class="av" id="dAvatar">—</div><div><b id="dName">—</b><span id="dSpec">Doctor</span></div></div>
+          <nav class="dash-nav">
+            <button class="active" data-panel="dDuty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Shift Status</button>
+            <button data-panel="dRoster"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>Colleague Roster</button>
+            <button data-panel="dAppts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Department Bookings</button>
+          </nav>
+        </aside>
+        <div class="dash-main">
+          <div class="panel" data-content="dDuty">
+            <h3>Shift status</h3>
+            <p class="sub">Check in when you start your shift so patients and colleagues see you're available.</p>
+            <div class="duty-toggle" id="dutyToggleBox">
+              <div class="dstat"><span class="d-dot-lg" id="dutyDot"></span><div><b id="dutyLabel">Off duty</b><span id="dutySince">Not checked in yet</span></div></div>
+              <button class="btn btn-primary btn-sm" id="dutyBtn">Check In</button>
+            </div>
+          </div>
+          <div class="panel" data-content="dRoster">
+            <h3>Who else is on duty</h3>
+            <p class="sub">Live status across both branches.</p>
+            <div id="dRosterList"></div>
+          </div>
+          <div class="panel" data-content="dAppts">
+            <h3>Bookings in your department</h3>
+            <p class="sub">Pulled from the shared appointment book.</p>
+            <div id="dApptTableWrap"><div class="empty-note">No bookings yet for this department.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin dashboard -->
+    <div id="adminScreen" style="display:none;">
+      <div class="dash-grid">
+        <aside class="dash-side">
+          <div class="who"><div class="av" id="aAvatar">—</div><div><b id="aName">—</b><span>Admin</span></div></div>
+          <nav class="dash-nav">
+            <button class="active" data-panel="aAlerts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>Emergency Alerts</button>
+            <button data-panel="aAppts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>All Appointments</button>
+            <button data-panel="aRoster"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>Doctor Roster</button>
+            <button data-panel="aNotif"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg>Notification Log</button>
+          </nav>
+        </aside>
+        <div class="dash-main">
+          <div class="panel" data-content="aAlerts">
+            <h3>Emergency alerts</h3>
+            <p class="sub">Every SOS button press, most recent first.</p>
+            <div id="aAlertTableWrap"><div class="empty-note">No alerts logged yet.</div></div>
+          </div>
+          <div class="panel" data-content="aAppts">
+            <h3>All appointment requests</h3>
+            <div id="aApptTableWrap"><div class="empty-note">No appointments yet.</div></div>
+          </div>
+          <div class="panel" data-content="aRoster">
+            <h3>Doctor roster</h3>
+            <div id="aRosterList"></div>
+          </div>
+          <div class="panel" data-content="aNotif">
+            <h3>Notification log (demo)</h3>
+            <p class="sub">Simulated email/SMS sends — connect a real provider to make these live.</p>
+            <div id="aNotifTableWrap"><div class="empty-note">No notifications yet.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Chat assistant -->
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <div><b>Health Village 24 Assistant</b><span>Usually replies in seconds</span></div>
+    <button id="chatCloseBtn" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-input-row">
+    <input type="text" id="chatInput" placeholder="Ask about hours, booking, branches..." aria-label="Message">
+    <button id="chatSendBtn">Send</button>
+  </div>
+</div>
+
+<script>
+/* ---------------- Persistent storage helper (with in-memory fallback) ---------------- */
+const Store = {
+  mem:{},
+  async get(key, shared){
+    try{
+      const r = await window.storage.get(key, !!shared);
+      return r ? JSON.parse(r.value) : null;
+    }catch(e){
+      const k=(shared?'s:':'l:')+key;
+      return Store.mem.hasOwnProperty(k) ? Store.mem[k] : null;
+    }
+  },
+  async set(key, value, shared){
+    try{ await window.storage.set(key, JSON.stringify(value), !!shared); }
+    catch(e){ Store.mem[(shared?'s:':'l:')+key] = value; }
+  }
+};
+async function getList(key, shared){ const v = await Store.get(key, shared); return Array.isArray(v) ? v : []; }
+
+/* ---------------- Toasts ---------------- */
+function toast(msg){
+  const stack = document.getElementById('toastStack');
+  const el = document.createElement('div');
+  el.className='toast';
+  el.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg><span>'+msg+'</span>';
+  stack.appendChild(el);
+  setTimeout(()=>{ el.remove(); }, 4200);
+}
+
+/* ---------------- Notification log (simulated email/SMS) ---------------- */
+async function logNotification(type, to, message){
+  const list = await getList('notifications', true);
+  list.unshift({ id:Date.now()+Math.random(), type, to, message, ts:new Date().toISOString() });
+  await Store.set('notifications', list.slice(0,200), true);
+  return list;
+}
+
+/* ---------------- Mobile nav ---------------- */
+const hamburger = document.getElementById('hamburgerBtn');
+const mainNav = document.getElementById('mainNav');
+hamburger.addEventListener('click', () => {
+  const isOpen = mainNav.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mainNav.classList.remove('open'); hamburger.setAttribute('aria-expanded', false); }));
+
+/* ---------------- FAQ accordion ---------------- */
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+/* ---------------- Appointment form (public) ---------------- */
+document.getElementById('apptForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const rec = {
+    id: Date.now()+Math.random(),
+    name: this.fname.value, phone: this.fphone.value, email: this.femail.value,
+    branch: this.fbranch.value, department: this.fdept.value, date: this.fdate.value,
+    reason: this.fmsg.value, status:'pending', createdAt: new Date().toISOString()
+  };
+  const list = await getList('appointments', true);
+  list.unshift(rec);
+  await Store.set('appointments', list, true);
+  await logNotification('Email', rec.email, 'Appointment request received for '+rec.department+' at '+rec.branch+' on '+rec.date+'.');
+  await logNotification('SMS', rec.phone, 'Health Village 24: your '+rec.department+' request for '+rec.date+' is being confirmed.');
+  document.getElementById('formSuccess').classList.add('show');
+  this.reset();
+  document.getElementById('formSuccess').scrollIntoView({behavior:'smooth', block:'center'});
+});
+
+/* ---------------- Stat counters ---------------- */
+const counters = document.querySelectorAll('[data-count]');
+const animateCounter = (el) => {
+  const target = parseInt(el.getAttribute('data-count'), 10);
+  const duration = 1400; const start = performance.now();
+  const step = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target).toLocaleString();
+    if (progress < 1) requestAnimationFrame(step); else el.textContent = target.toLocaleString();
+  };
+  requestAnimationFrame(step);
+};
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) { animateCounter(entry.target); obs.unobserve(entry.target); } });
+}, { threshold: 0.5 });
+counters.forEach(c => obs.observe(c));
+
+/* ---------------- Back to top ---------------- */
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => { backToTop.classList.toggle('show', window.scrollY > 600); });
+backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+/* ================= DOCTOR ROSTER (shared) ================= */
+const DEFAULT_DOCTORS = [
+  {id:'amara-reyes', name:'Dr. Amara Reyes', spec:'Cardiology', branch:'Sandton, Gauteng', years:14, rating:4.9, initials:'AR', color:'linear-gradient(135deg,#146B63,#0B4F4A)', status:'on-duty', since:new Date().toISOString()},
+  {id:'james-mensah', name:'Dr. James Mensah', spec:'Neurology', branch:'Sandton, Gauteng', years:11, rating:4.8, initials:'JM', color:'linear-gradient(135deg,#1C8078,#146B63)', status:'off-duty', since:null},
+  {id:'sana-khatri', name:'Dr. Sana Khatri', spec:'Pediatrics', branch:'Polokwane, Limpopo', years:9, rating:5.0, initials:'SK', color:'linear-gradient(135deg,#0E5D57,#0B4F4A)', status:'on-duty', since:new Date().toISOString()},
+  {id:'daniel-osei', name:'Dr. Daniel Osei', spec:'Orthopedics', branch:'Polokwane, Limpopo', years:17, rating:4.9, initials:'DO', color:'linear-gradient(135deg,#146B63,#1C8078)', status:'off-duty', since:null}
+];
+async function getRoster(){
+  let roster = await getList('doctor-roster', true);
+  if (!roster.length){ roster = DEFAULT_DOCTORS; await Store.set('doctor-roster', roster, true); }
+  return roster;
+}
+async function setRoster(roster){ await Store.set('doctor-roster', roster, true); }
+
+function statusPillHtml(status){
+  const on = status === 'on-duty';
+  return '<span class="duty-badge '+(on?'on':'')+'"><span class="d-dot"></span>'+(on?'On Duty':'Off Duty')+'</span>';
+}
+
+async function renderDoctorGrid(){
+  const roster = await getRoster();
+  const grid = document.getElementById('doctorGrid');
+  grid.innerHTML = roster.map(d => `
+    <div class="doctor-card">
+      <div class="doctor-photo" style="background:${d.color};">${d.initials}${statusPillHtml(d.status)}</div>
+      <div class="doctor-body">
+        <h3>${d.name}</h3>
+        <div class="spec">${d.spec}</div>
+        <div class="meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>${d.years} yrs</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 17.27 6.18 3.73-1.64-7.03L21.6 9.24l-7.19-.61L12 2 9.59 8.63l-7.19.61 5.06 4.73-1.64 7.03z"/></svg>${d.rating}</span>
+          <span>${d.branch}</span>
+        </div>
+        <a href="#appointment" class="btn btn-outline btn-sm btn-block">Book</a>
+      </div>
+    </div>`).join('');
+  const onDuty = roster.filter(d=>d.status==='on-duty').length;
+  document.getElementById('heroDutyCount').textContent = onDuty+' of '+roster.length;
+}
+document.getElementById('refreshRosterBtn').addEventListener('click', () => { renderDoctorGrid(); toast('Availability refreshed.'); });
+renderDoctorGrid();
+setInterval(renderDoctorGrid, 20000);
+
+/* ================= EMERGENCY SOS ================= */
+const sosOverlay = document.getElementById('sosOverlay');
+const sosOpenBtn = document.getElementById('sosOpenBtn');
+const sosCloseBtn = document.getElementById('sosCloseBtn');
+const sosDoneBtn = document.getElementById('sosDoneBtn');
+const holdBtn = document.getElementById('holdBtn');
+const holdFill = document.getElementById('holdFill');
+const holdBtnLabel = document.getElementById('holdBtnLabel');
+const sosStepConfirm = document.getElementById('sosStepConfirm');
+const sosStepResult = document.getElementById('sosStepResult');
+
+const BRANCHES = [
+  {name:'Sandton, Gauteng', lat:-26.1076, lng:28.0567, phone:'+27 11 555 0123'},
+  {name:'Polokwane, Limpopo', lat:-23.9045, lng:29.4689, phone:'+27 15 555 0456'}
+];
+function haversineKm(lat1, lon1, lat2, lon2){
+  const R=6371, toRad = d=>d*Math.PI/180;
+  const dLat=toRad(lat2-lat1), dLon=toRad(lon2-lon1);
+  const a=Math.sin(dLat/2)**2 + Math.cos(toRad(lat1))*Math.cos(toRad(lat2))*Math.sin(dLon/2)**2;
+  return R*2*Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+function nearestBranch(lat, lng){
+  let best=null, bestDist=Infinity;
+  BRANCHES.forEach(b=>{ const d=haversineKm(lat,lng,b.lat,b.lng); if(d<bestDist){bestDist=d; best=b;} });
+  return {branch:best, distanceKm:bestDist};
+}
+
+function openSos(){ sosOverlay.classList.add('show'); sosStepConfirm.style.display='block'; sosStepResult.classList.remove('show'); resetHold(); }
+function closeSos(){ sosOverlay.classList.remove('show'); resetHold(); }
+sosOpenBtn.addEventListener('click', openSos);
+sosCloseBtn.addEventListener('click', closeSos);
+sosDoneBtn.addEventListener('click', closeSos);
+sosOverlay.addEventListener('click', (e)=>{ if(e.target===sosOverlay) closeSos(); });
+
+let holdTimer=null, holdStart=0;
+const HOLD_MS = 3000;
+function resetHold(){ clearInterval(holdTimer); holdFill.style.width='0%'; holdBtn.classList.remove('filling'); holdBtnLabel.textContent='Press and hold to confirm'; }
+function startHold(){
+  holdStart = Date.now();
+  holdBtn.classList.add('filling');
+  holdTimer = setInterval(()=>{
+    const pct = Math.min(100, ((Date.now()-holdStart)/HOLD_MS)*100);
+    holdFill.style.width = pct+'%';
+    holdBtnLabel.textContent = pct < 100 ? 'Keep holding…' : 'Sending alert…';
+    if (pct >= 100){ clearInterval(holdTimer); triggerSos(); }
+  }, 40);
+}
+function cancelHold(){ if(Date.now()-holdStart < HOLD_MS){ resetHold(); } }
+holdBtn.addEventListener('mousedown', startHold);
+holdBtn.addEventListener('touchstart', (e)=>{ e.preventDefault(); startHold(); }, {passive:false});
+['mouseup','mouseleave'].forEach(ev=>holdBtn.addEventListener(ev, cancelHold));
+holdBtn.addEventListener('touchend', cancelHold);
+
+async function triggerSos(){
+  const session = getSession();
+  const who = session ? session.name : 'Anonymous website visitor';
+  let coords = null, geoError = null;
+  if (navigator.geolocation){
+    coords = await new Promise((resolve)=>{
+      navigator.geolocation.getCurrentPosition(
+        pos => resolve({lat:pos.coords.latitude, lng:pos.coords.longitude, accuracy:Math.round(pos.coords.accuracy)}),
+        err => { geoError = err.message; resolve(null); },
+        { enableHighAccuracy:true, timeout:8000 }
+      );
+    });
+  } else { geoError = 'Geolocation not supported on this device'; }
+
+  let nearest = null;
+  if (coords) nearest = nearestBranch(coords.lat, coords.lng);
+
+  const alert = {
+    id: Date.now()+Math.random(), patient: who, ts: new Date().toISOString(),
+    lat: coords?coords.lat:null, lng: coords?coords.lng:null, accuracy: coords?coords.accuracy:null,
+    geoError, nearestBranch: nearest?nearest.branch.name:null, distanceKm: nearest?nearest.distanceKm.toFixed(1):null,
+    status:'open'
+  };
+  const alerts = await getList('emergency-alerts', true);
+  alerts.unshift(alert);
+  await Store.set('emergency-alerts', alerts, true);
+
+  const staffPhone = nearest ? nearest.branch.phone : BRANCHES[0].phone;
+  await logNotification('SMS', staffPhone+' (on-duty desk)', 'EMERGENCY SOS from '+who+' near '+(alert.nearestBranch||'unknown location')+'.');
+  await logNotification('Email', 'duty-manager@healthvillage24.co.za', 'Emergency alert logged at '+new Date(alert.ts).toLocaleString()+'.');
+
+  const box = document.getElementById('sosDataBox');
+  box.innerHTML = `
+    <div><span>Time</span><b>${new Date(alert.ts).toLocaleTimeString()}</b></div>
+    <div><span>Location</span><b>${coords? coords.lat.toFixed(5)+', '+coords.lng.toFixed(5) : 'Unavailable'}</b></div>
+    <div><span>Accuracy</span><b>${coords? '±'+coords.accuracy+' m' : '—'}</b></div>
+    <div><span>Nearest branch</span><b>${nearest? nearest.branch.name : 'Select manually — call desk'}</b></div>
+    <div><span>Distance</span><b>${nearest? nearest.distanceKm+' km' : '—'}</b></div>
+  `;
+  document.getElementById('sosNotifLog').innerHTML = `
+    <div class="notif-line"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>SMS queued to on-duty desk (demo)</div>
+    <div class="notif-line"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg>Email queued to duty manager (demo)</div>
+    ${geoError ? '<div class="notif-line" style="color:var(--coral-dark);">Location unavailable: '+geoError+'</div>' : ''}
+  `;
+  sosStepConfirm.style.display='none';
+  sosStepResult.classList.add('show');
+  resetHold();
+  toast('Emergency alert logged.');
+}
+
+/* ================= AUTH / SESSION ================= */
+let sessionData = null;
+function getSession(){ return sessionData; }
+
+const appView = document.getElementById('appView');
+function showAppView(){ appView.classList.add('show'); document.body.style.overflow='hidden'; }
+function hideAppView(){ appView.classList.remove('show'); document.body.style.overflow=''; }
+document.getElementById('portalTopLink').addEventListener('click',(e)=>{e.preventDefault(); showAppView(); renderAuthState();});
+document.getElementById('portalFooterLink').addEventListener('click',(e)=>{e.preventDefault(); showAppView(); renderAuthState();});
+document.getElementById('appCloseBtn').addEventListener('click', hideAppView);
+document.getElementById('appHomeLink').addEventListener('click',(e)=>{e.preventDefault(); hideAppView();});
+
+function renderAuthState(){
+  document.getElementById('authScreen').style.display = sessionData ? 'none' : 'block';
+  document.getElementById('patientScreen').style.display = (sessionData && sessionData.role==='patient') ? 'block' : 'none';
+  document.getElementById('doctorScreen').style.display = (sessionData && sessionData.role==='doctor') ? 'block' : 'none';
+  document.getElementById('adminScreen').style.display = (sessionData && sessionData.role==='admin') ? 'block' : 'none';
+  const chip = document.getElementById('roleChip');
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (sessionData){
+    chip.style.display='inline-flex'; chip.textContent = sessionData.role;
+    logoutBtn.style.display='inline-flex';
+  } else { chip.style.display='none'; logoutBtn.style.display='none'; }
+}
+
+/* Role toggle in login form */
+let loginRole = 'patient';
+document.querySelectorAll('.role-toggle button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.role-toggle button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    loginRole = btn.dataset.role;
+    document.getElementById('loginSpecWrap').style.display = loginRole==='doctor' ? 'block':'none';
+    document.getElementById('loginBranchWrap').style.display = loginRole!=='patient' ? 'block':'none';
+  });
+});
+document.querySelectorAll('.demo-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const role = btn.dataset.demo;
+    if (role==='patient') startSession({role:'patient', name:'Thandiwe Nkosi', email:'thandiwe.demo@example.com', branch:'Sandton, Gauteng'});
+    if (role==='doctor') startSession({role:'doctor', name:'Dr. Amara Reyes', email:'amara.reyes@healthvillage24.co.za', spec:'Cardiology', branch:'Sandton, Gauteng', doctorId:'amara-reyes'});
+    if (role==='admin') startSession({role:'admin', name:'Clinic Admin', email:'admin@healthvillage24.co.za'});
+  });
+});
+document.getElementById('loginForm').addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const name = document.getElementById('loginName').value.trim();
+  const email = document.getElementById('loginEmail').value.trim();
+  if (!name || !email) return;
+  if (loginRole==='patient') startSession({role:'patient', name, email, branch:'Sandton, Gauteng'});
+  else if (loginRole==='doctor') startSession({role:'doctor', name, email, spec:document.getElementById('loginSpec').value, branch:document.getElementById('loginBranch').value, doctorId:name.toLowerCase().replace(/[^a-z]+/g,'-')});
+  else startSession({role:'admin', name, email});
+});
+function startSession(s){
+  sessionData = s;
+  renderAuthState();
+  toast('Signed in as '+s.name+' ('+s.role+').');
+  if (s.role==='patient') initPatientScreen();
+  if (s.role==='doctor') initDoctorScreen();
+  if (s.role==='admin') initAdminScreen();
+}
+document.getElementById('logoutBtn').addEventListener('click', ()=>{ sessionData=null; renderAuthState(); toast('Logged out.'); });
+
+/* Dashboard side-nav switching (shared behavior) */
+document.querySelectorAll('.dash-nav').forEach(nav=>{
+  nav.addEventListener('click', (e)=>{
+    const btn = e.target.closest('button[data-panel]');
+    if (!btn) return;
+    nav.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const root = nav.closest('.dash-grid');
+    root.querySelectorAll('.panel').forEach(p=>{ p.style.display = (p.dataset.content===btn.dataset.panel) ? 'block':'none'; });
+  });
+  // initialize: show first panel only
+  const root = nav.closest('.dash-grid');
+  const panels = root.querySelectorAll('.panel');
+  panels.forEach((p,i)=>{ p.style.display = i===0 ? 'block':'none'; });
+});
+
+/* ---------- Patient screen ---------- */
+async function initPatientScreen(){
+  document.getElementById('pName').textContent = sessionData.name;
+  document.getElementById('pAvatar').textContent = sessionData.name.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
+  document.getElementById('pHomeBranch').textContent = sessionData.branch || '—';
+  await refreshPatientHistory();
+}
+document.getElementById('pBookForm').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const rec = {
+    id: Date.now()+Math.random(), name: sessionData.name, email: sessionData.email, phone:'—',
+    branch: document.getElementById('pBranch').value, department: document.getElementById('pDept').value,
+    date: document.getElementById('pDate').value, reason: document.getElementById('pReason').value,
+    status:'confirmed', createdAt: new Date().toISOString()
+  };
+  const list = await getList('appointments', true);
+  list.unshift(rec);
+  await Store.set('appointments', list, true);
+  await logNotification('Email', rec.email, 'Appointment confirmed for '+rec.department+' at '+rec.branch+' on '+rec.date+'.');
+  toast('Appointment saved to your history.');
+  e.target.reset();
+  await refreshPatientHistory();
+});
+async function refreshPatientHistory(){
+  const all = await getList('appointments', true);
+  const mine = all.filter(a => a.email && sessionData.email && a.email.toLowerCase()===sessionData.email.toLowerCase());
+  document.getElementById('pTotalCount').textContent = mine.length;
+  const today = new Date().toISOString().slice(0,10);
+  document.getElementById('pUpcomingCount').textContent = mine.filter(a=>a.date >= today).length;
+  const wrap = document.getElementById('pHistoryTableWrap');
+  if (!mine.length){ wrap.innerHTML = '<div class="empty-note">No visits yet — book your first appointment.</div>'; return; }
+  wrap.innerHTML = `<table class="data-table"><thead><tr><th>Date</th><th>Department</th><th>Branch</th><th>Status</th></tr></thead><tbody>
+    ${mine.map(a=>`<tr><td>${a.date||'—'}</td><td>${a.department}</td><td>${a.branch}</td><td><span class="pill ${a.status}">${a.status}</span></td></tr>`).join('')}
+  </tbody></table>`;
+}
+
+/* ---------- Doctor screen ---------- */
+async function initDoctorScreen(){
+  document.getElementById('dName').textContent = sessionData.name;
+  document.getElementById('dAvatar').textContent = sessionData.name.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();
+  document.getElementById('dSpec').textContent = sessionData.spec+' · '+sessionData.branch;
+  await refreshDutyBox();
+  await refreshDoctorRosterView();
+  await refreshDoctorAppts();
+}
+async function refreshDutyBox(){
+  const roster = await getRoster();
+  let mine = roster.find(d=>d.id===sessionData.doctorId);
+  if (!mine){
+    mine = {id:sessionData.doctorId, name:sessionData.name, spec:sessionData.spec, branch:sessionData.branch, years:0, rating:5.0, initials:sessionData.name.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase(), color:'linear-gradient(135deg,#146B63,#0B4F4A)', status:'off-duty', since:null};
+    roster.push(mine);
+    await setRoster(roster);
+  }
+  const box = document.getElementById('dutyToggleBox');
+  const on = mine.status==='on-duty';
+  box.classList.toggle('on', on);
+  document.getElementById('dutyLabel').textContent = on ? 'On duty' : 'Off duty';
+  document.getElementById('dutySince').textContent = mine.since ? ('Since '+new Date(mine.since).toLocaleTimeString()) : 'Not checked in yet';
+  document.getElementById('dutyBtn').textContent = on ? 'Check Out' : 'Check In';
+}
+document.getElementById('dutyBtn').addEventListener('click', async ()=>{
+  const roster = await getRoster();
+  const mine = roster.find(d=>d.id===sessionData.doctorId);
+  if (!mine) return;
+  const goingOn = mine.status !== 'on-duty';
+  mine.status = goingOn ? 'on-duty' : 'off-duty';
+  mine.since = goingOn ? new Date().toISOString() : null;
+  await setRoster(roster);
+  await refreshDutyBox();
+  renderDoctorGrid();
+  toast(goingOn ? "Checked in — you're now visible as on duty." : 'Checked out — see you next shift.');
+});
+async function refreshDoctorRosterView(){
+  const roster = await getRoster();
+  const el = document.getElementById('dRosterList');
+  el.innerHTML = roster.map(d=>`<div class="roster-row"><span>${d.name} · ${d.spec} (${d.branch})</span>${statusPillHtml(d.status)}</div>`).join('');
+}
+async function refreshDoctorAppts(){
+  const all = await getList('appointments', true);
+  const mine = all.filter(a=>a.department===sessionData.spec);
+  const wrap = document.getElementById('dApptTableWrap');
+  if (!mine.length){ wrap.innerHTML='<div class="empty-note">No bookings yet for this department.</div>'; return; }
+  wrap.innerHTML = `<table class="data-table"><thead><tr><th>Patient</th><th>Date</th><th>Branch</th><th>Status</th></tr></thead><tbody>
+    ${mine.map(a=>`<tr><td>${a.name}</td><td>${a.date||'—'}</td><td>${a.branch}</td><td><span class="pill ${a.status}">${a.status}</span></td></tr>`).join('')}
+  </tbody></table>`;
+}
+
+/* ---------- Admin screen ---------- */
+async function initAdminScreen(){
+  document.getElementById('aName').textContent = sessionData.name;
+  document.getElementById('aAvatar').textContent = 'A';
+  await refreshAdminAlerts();
+  await refreshAdminAppts();
+  await refreshAdminRoster();
+  await refreshAdminNotif();
+}
+async function refreshAdminAlerts(){
+  const alerts = await getList('emergency-alerts', true);
+  const wrap = document.getElementById('aAlertTableWrap');
+  if (!alerts.length){ wrap.innerHTML='<div class="empty-note">No alerts logged yet.</div>'; return; }
+  wrap.innerHTML = `<table class="data-table"><thead><tr><th>Time</th><th>Patient</th><th>Location</th><th>Nearest Branch</th><th>Status</th><th></th></tr></thead><tbody>
+    ${alerts.map(a=>`<tr>
+      <td>${new Date(a.ts).toLocaleString()}</td>
+      <td>${a.patient}</td>
+      <td>${a.lat? a.lat.toFixed(4)+', '+a.lng.toFixed(4) : (a.geoError||'Unavailable')}</td>
+      <td>${a.nearestBranch || '—'}${a.distanceKm? ' ('+a.distanceKm+' km)':''}</td>
+      <td><span class="pill ${a.status==='open'?'open':'resolved'}">${a.status}</span></td>
+      <td>${a.status==='open' ? `<button class="mini-btn" data-resolve="${a.id}">Mark resolved</button>` : ''}</td>
+    </tr>`).join('')}
+  </tbody></table>`;
+  wrap.querySelectorAll('[data-resolve]').forEach(b=>b.addEventListener('click', async ()=>{
+    const id = parseFloat(b.dataset.resolve);
+    const list = await getList('emergency-alerts', true);
+    const item = list.find(a=>a.id===id);
+    if (item) item.status='resolved';
+    await Store.set('emergency-alerts', list, true);
+    toast('Alert marked resolved.');
+    refreshAdminAlerts();
+  }));
+}
+async function refreshAdminAppts(){
+  const all = await getList('appointments', true);
+  const wrap = document.getElementById('aApptTableWrap');
+  if (!all.length){ wrap.innerHTML='<div class="empty-note">No appointments yet.</div>'; return; }
+  wrap.innerHTML = `<table class="data-table"><thead><tr><th>Patient</th><th>Email</th><th>Dept</th><th>Branch</th><th>Date</th><th>Status</th></tr></thead><tbody>
+    ${all.map(a=>`<tr><td>${a.name}</td><td>${a.email||'—'}</td><td>${a.department}</td><td>${a.branch}</td><td>${a.date||'—'}</td><td><span class="pill ${a.status}">${a.status}</span></td></tr>`).join('')}
+  </tbody></table>`;
+}
+async function refreshAdminRoster(){
+  const roster = await getRoster();
+  document.getElementById('aRosterList').innerHTML = roster.map(d=>`<div class="roster-row"><span>${d.name} · ${d.spec} (${d.branch})</span>${statusPillHtml(d.status)}</div>`).join('');
+}
+async function refreshAdminNotif(){
+  const list = await getList('notifications', true);
+  const wrap = document.getElementById('aNotifTableWrap');
+  if (!list.length){ wrap.innerHTML='<div class="empty-note">No notifications yet.</div>'; return; }
+  wrap.innerHTML = `<table class="data-table"><thead><tr><th>Time</th><th>Type</th><th>To</th><th>Message</th></tr></thead><tbody>
+    ${list.slice(0,40).map(n=>`<tr><td>${new Date(n.ts).toLocaleTimeString()}</td><td>${n.type}</td><td>${n.to}</td><td>${n.message}</td></tr>`).join('')}
+  </tbody></table>`;
+}
+
+/* ================= CHAT ASSISTANT ================= */
+const chatPanel = document.getElementById('chatPanel');
+const chatBody = document.getElementById('chatBody');
+document.getElementById('chatOpenBtn').addEventListener('click', ()=>{
+  chatPanel.classList.toggle('show');
+  if (chatPanel.classList.contains('show') && !chatBody.dataset.greeted){
+    addChatMsg('bot', "Hi, I'm the Health Village 24 assistant. I can help with opening hours, branches, booking, or medical aid billing. For a medical emergency, please use the SOS button instead, or call 10177 / 112.");
+    chatBody.dataset.greeted = '1';
+  }
+});
+document.getElementById('chatCloseBtn').addEventListener('click', ()=>chatPanel.classList.remove('show'));
+function addChatMsg(who, text){
+  const el = document.createElement('div');
+  el.className = 'msg '+who;
+  el.textContent = text;
+  chatBody.appendChild(el);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+function ruleBasedReply(msg){
+  const m = msg.toLowerCase();
+  if (/(emergen|urgent|dying|chest pain|can'?t breathe|bleeding)/.test(m)) return "If this is a medical emergency, please use the red SOS button on this page now, or call 10177 / 112 immediately — I can't dispatch help through chat.";
+  if (/(hour|open|close|time)/.test(m)) return "Sandton is open Mon–Sat 7am–8pm, Polokwane Mon–Sat 7am–6pm. Both Emergency Departments are open 24/7.";
+  if (/(book|appointment|schedule)/.test(m)) return "You can book directly on this page in the 'Book an Appointment' section, or log in to the Patient Portal to book and see your visit history.";
+  if (/(location|address|where|sandton|polokwane|branch)/.test(m)) return "We have two branches: Sandton, Gauteng (14 Rivonia Road) and Polokwane, Limpopo (52 Bodenstein Street). Both listed under 'Locations' above.";
+  if (/(insur|medical aid|bill|pay|cost)/.test(m)) return "We offer direct billing with most major medical aid schemes. Bring your medical aid card and ID to your first visit.";
+  if (/(doctor|available|on duty)/.test(m)) return "Check the 'Doctors On Duty' section on this page — it updates live as doctors check in and out for their shift.";
+  if (/(thank|thanks)/.test(m)) return "You're welcome! Anything else I can help with?";
+  return "I can help with hours, branches, booking, medical aid billing, or doctor availability — what would you like to know? For emergencies, please use the SOS button.";
+}
+async function tryAiReply(userText){
+  try{
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-6",
+        max_tokens: 300,
+        system: "You are the Health Village 24 Clinic website assistant (Sandton, Gauteng and Polokwane, Limpopo, South Africa). Only answer questions about clinic hours, locations, booking, medical aid billing, and general non-diagnostic guidance. Never diagnose or give specific medical/dosage advice. For anything urgent or emergency-sounding, tell the user to use the SOS button on the page or call 10177 / 112 immediately. Keep replies under 60 words.",
+        messages: [{ role: "user", content: userText }]
+      })
+    });
+    if (!response.ok) throw new Error('bad status');
+    const data = await response.json();
+    const textBlock = (data.content||[]).find(b=>b.type==='text');
+    if (textBlock && textBlock.text) return textBlock.text;
+    throw new Error('no text');
+  }catch(e){ return null; }
+}
+async function handleChatSend(){
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if (!text) return;
+  addChatMsg('user', text);
+  input.value='';
+  const typing = document.createElement('div');
+  typing.className='msg bot'; typing.textContent='…'; chatBody.appendChild(typing); chatBody.scrollTop=chatBody.scrollHeight;
+  const aiReply = await tryAiReply(text);
+  typing.remove();
+  addChatMsg('bot', aiReply || ruleBasedReply(text));
+}
+document.getElementById('chatSendBtn').addEventListener('click', handleChatSend);
+document.getElementById('chatInput').addEventListener('keydown', (e)=>{ if(e.key==='Enter') handleChatSend(); });
+
+/* Init */
+renderAuthState();
+</script>
+</body>
+</html>
